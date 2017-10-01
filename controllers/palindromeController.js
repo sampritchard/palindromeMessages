@@ -4,8 +4,10 @@ exports.indexPage = (req, res) => {
 
 exports.newPalindrome = (req, res) => {
   const word = req.body.palindrome;
-  const reverseWord = word.split('').reverse().join('')
-  if (word === reverseWord) {
+  const removePunctuation = word.replace(/[^A-Za-z]+/g,'');
+  console.log(removePunctuation)
+  const reverseWord = removePunctuation.split('').reverse().join('')
+  if (removePunctuation === reverseWord) {
     res.render('truePage')
   } else {
     res.render('falsePage')
