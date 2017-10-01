@@ -11,10 +11,14 @@ exports.newPalindrome = (req, res) => {
   if (removePunctuation.length === 0) {
     res.render('errorPage')
   } else if(removePunctuation === reverseWord) {
-    res.render('truePage')
-    array.push(removePunctuation)
+      res.render('truePage')
+        if (array.length < 10) {
+          array.push(removePunctuation)
+        } else {
+        array.splice(0, 1, removePunctuation)
+        }
   } else {
-    res.render('falsePage')
+      res.render('falsePage')
   }
 }
 
