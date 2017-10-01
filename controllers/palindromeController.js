@@ -5,7 +5,9 @@ exports.indexPage = (req, res) => {
 exports.newPalindrome = (req, res) => {
   const word = req.body.palindrome;
   const reverseWord = word.split('').reverse().join('')
-  if (word !== reverseWord) {
+  if (word === reverseWord) {
+    res.render('truePage')
+  } else {
     res.render('falsePage')
   }
 }
