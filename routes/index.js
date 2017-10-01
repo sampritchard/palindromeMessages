@@ -4,5 +4,6 @@ const router = express.Router();
 
 router.get('/', palindromeController.indexPage)
 router.post('/', palindromeController.newPalindrome)
+router.get('/palindromes', palindromeController.showPalindromes)
 
 module.exports = router;
