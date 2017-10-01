@@ -7,8 +7,8 @@ Browser.localhost('localhost', 3000);
   describe('User visits index page', () => {
     const browser = new Browser;
 
-    before(() => {
-      return browser.visit('/palindromes');
+    before(async() => {
+      await browser.visit('/palindromes');
     })
 
     describe('sees the index page', () => {
@@ -16,8 +16,8 @@ Browser.localhost('localhost', 3000);
         browser.assert.success();
       })
 
-      it('should see the heading', () => {
-        browser.assert.text('h1', 'Palindromes')
+      it('should see the palindrome', () => {
+        browser.assert.text('li', 'byybhelloollehheh')
       })
     })
   })
