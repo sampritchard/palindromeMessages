@@ -19,5 +19,9 @@ Browser.localhost('localhost', 3000);
       it('should see the heading', () => {
         browser.assert.text('h1', 'Palindrome Finder')
       })
+
+      it('should see a form', () => {
+        browser.assert.element('form')
+      })
     })
   })
